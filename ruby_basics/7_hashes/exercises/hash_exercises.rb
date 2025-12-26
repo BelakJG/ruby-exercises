@@ -6,6 +6,7 @@ def create_favorite_hash(color, number)
     color: color,
     number: number
   }
+  fave
 end
 
 def favorite_color(favorite_list)
