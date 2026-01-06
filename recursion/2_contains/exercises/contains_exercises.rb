@@ -5,4 +5,10 @@ def contains?(hash, search_value)
   # Examples:
   # contains?({ foo: { bar: "baz" } }, "baz") # true
   # contains?({ foo: { bar: "baz" } }, "egg") # false
+  return if hash.class != Hash
+  return true if hash.value?(search_value)
+  hash.each_value do |value|
+    return true if contains?(value, search_value)
+  end
+  false
 end
